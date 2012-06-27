@@ -2,7 +2,7 @@
 # A personal cheatsheet for setting up a osx for my needs
 # fedek@infobytesec.com
 #
-shell_profile='$HOME/.profile'
+shell_profile="$HOME/.profile"
 
 # Terminal settings
 touch $shell_profile
