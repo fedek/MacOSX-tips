@@ -5,7 +5,9 @@
 shell_profile='$HOME/.profile'
 
 # Terminal settings
+touch $shell_profile
 #colors
+echo "[+] Terminal settings"
 echo "export CLICOLOR=1" >> $shell_profile
 #grep colors
 echo "alias grep='grep --colour=auto'" >> $shell_profile
@@ -19,6 +21,7 @@ echo "export EDITOR=vim"
 ####
 #SSH timeout settings
 #
+mkdir $HOME/.ssh
 echo '''
 ServerAliveInterval 60
 ServerAliveCountMax 5
