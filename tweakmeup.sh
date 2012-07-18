@@ -47,6 +47,9 @@ set tabstop=4
 echo "[+] Airport utility linked to /usr/bin/"
 sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/bin/airport
 ###
+## Activate locate db daemon
+echo "[+] Run locate db daemon on boot"
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 #Finder Settings
 #AppleShowAllFiles 
 defaults  write com.apple.Finder AppleShowAllFiles YES
