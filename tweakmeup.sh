@@ -82,6 +82,20 @@ defaults write com.apple.screencapture type -string "png"
 
 # Font tweak for external LCD displays
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
+## General Sec
+# Enable Require password for screen saver.
+sudo defaults -currentHost write com.apple.screensaver askForPassword -int 1
+# Enable secure virtual memory.
+sudo defaults write /Library/Preferences/com.apple.virtualMemory UseEncryptedSwap -bool yes
+# Enable Firewall options: # 1 essential, 2 specific services
+sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 2
+# Fuck em'all (http://krypted.com/mac-os-x/the-os-x-application-layer-firewall-part-3-lion/)
+/usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on --setblockall on
+# Enable Stealth mode.
+sudo defaults write /Library/Preferences/com.apple.alf stealthenabled 1
+# Enable ipfw logs
+sudo defaults write /Library/Preferences/com.apple.alf loggingenabled 1
+
 ####
 #boot in verbose mode
 #
