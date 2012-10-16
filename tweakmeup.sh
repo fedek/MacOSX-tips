@@ -74,6 +74,12 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.Safari IncludeDebugMenu 1
 defaults write com.apple.Safari WebKitDeveloperExtras -bool true
 
+# Crash Reporter Modes (basic, developer, server)
+# basic: clasic prompt
+# developer: crashed thread 
+# server: no prompt (good on fuzzing)
+defaults write com.apple.CrashReporter DialogType -string developer
+
 ## Screenshots
 mkdir $HOME/screenshots
 defaults write com.apple.screencapture location -string "$HOME/screenshots"
